@@ -1,6 +1,15 @@
 {
     "navbar": {
-        "title": "OEBench"
+        "title": "PyOE",
+        "home": "主页",
+        "paper": "论文",
+        "github": "Github"
+    },
+    "home": {
+        "get_started": "开始使用",
+        "learn_more": "了解更多",
+        "title": "欢迎来到 PyOE!",
+        "description": "让我们在真实世界的关系数据流中研究开放环境挑战"
     },
     "alert": {
         "default": "操作失败"

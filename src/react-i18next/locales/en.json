@@ -1,9 +1,15 @@
 {
     "navbar": {
-        "title": "OEBench",
+        "title": "PyOE",
         "home": "Home",
         "paper": "Paper",
         "github": "Github"
+    },
+    "home": {
+        "get_started": "Get Started",
+        "learn_more": "Learn More",
+        "title": "Welcome to PyOE!",
+        "description": "Investigating Open Environment Challenges in Real-World Relational Data Streams"
     },
     "alert": {
         "default": "Operation Failed"

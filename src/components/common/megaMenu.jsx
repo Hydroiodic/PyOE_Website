@@ -107,9 +107,9 @@ function MegaMenu() {
         <Navbar className="mx-auto max-w-full px-4 py-4 shadow-none border-b-2 border-gray-200">
             <div className="flex items-center justify-between text-blue-gray-900 mx-12">
                 <Link to="/home">
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 items-center">
                         <BookOpenIcon className="w-12 h-12 text-yellow-800" />
-                        <Typography variant="h6" className="mr-4 cursor-pointer py-1.5 lg:ml-2 text-2xl">
+                        <Typography variant="h4" className="mr-4 cursor-pointer py-1.5 lg:ml-2">
                             {t("navbar.title")}
                         </Typography>
                     </div>
