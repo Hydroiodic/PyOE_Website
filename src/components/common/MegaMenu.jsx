@@ -2,10 +2,9 @@
 
 import React from "react";
 import {
-    Navbar, Collapse, Typography, IconButton, List, ListItem,
-    Menu, MenuHandler, MenuList, MenuItem,
+    Navbar, Collapse, Typography, IconButton, List, ListItem, Menu, MenuHandler, MenuList, MenuItem,
 } from "@material-tailwind/react";
-import { ChevronDownIcon, Bars3Icon, XMarkIcon, BookOpenIcon } from "@heroicons/react/24/outline";
+import { ChevronDownIcon, Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { paper_items, github_items } from './constants'
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -104,11 +103,11 @@ function MegaMenu() {
     }, []);
 
     return (
-        <Navbar className="mx-auto max-w-full px-4 py-4 shadow-none border-b-2 border-gray-200">
-            <div className="flex items-center justify-between text-blue-gray-900 mx-12">
+        <Navbar className="mx-auto max-w-full px-4 py-3 shadow-none border-b-2 border-gray-200">
+            <div className="flex items-center justify-between text-blue-gray-900 mx-8 lg-max:mx-4">
                 <Link to="/home">
                     <div className="flex gap-2 items-center">
-                        <BookOpenIcon className="w-12 h-12 text-yellow-800" />
+                        <img src="/xtra.png" alt="xtra" className="h-8 w-8" />
                         <Typography variant="h4" className="mr-4 cursor-pointer py-1.5 lg:ml-2">
                             {t("navbar.title")}
                         </Typography>

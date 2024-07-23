@@ -12,9 +12,20 @@ export const paper_items = [
 
 export const github_items = [
     {
-        title: "OEBench",
+        title: "PyOE",
         description: "An easy-use benchmark system.",
         icon: CommandLineIcon,
         url: "https://github.com/sjtudyq/PyOE",
+    },
+];
+
+export const footer_items = [
+    {
+        "title": "About Us",
+        "url": "/home",
+    },
+    {
+        "title": "Contact Us",
+        "url": "/home",
     },
 ];
