@@ -1,0 +1,11 @@
+{
+    "navbar": {
+        "title": "OEBench",
+        "home": "Home",
+        "paper": "Paper",
+        "github": "Github"
+    },
+    "alert": {
+        "default": "Operation Failed"
+    }
+}
