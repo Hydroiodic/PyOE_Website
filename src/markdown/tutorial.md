@@ -2,7 +2,7 @@
 
 PyOE behaves as an extension of OEBench, which mainly investigates the open environment challenges around us.
 
-This post is meant to assist you to use PyOE easily.
+This post is meant to assist you to use PyOE with ease.
 
 ## The Basic Steps of Using PyOE
 

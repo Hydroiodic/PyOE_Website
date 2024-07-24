@@ -82,6 +82,13 @@ function NavList() {
                     </ListItem>
                 </Link>
             </Typography>
+            <Typography variant="small" color="blue-gray" className="font-medium">
+                <Link to="/datasets">
+                    <ListItem className="flex items-center gap-2 py-2 pr-4 text-xl">
+                        {t("navbar.datasets")}
+                    </ListItem>
+                </Link>
+            </Typography>
             <NavListMenu list_name={t("navbar.paper")} items={paper_items} />
             <NavListMenu list_name={t("navbar.github")} items={github_items} />
         </List>

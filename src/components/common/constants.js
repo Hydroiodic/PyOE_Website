@@ -19,6 +19,7 @@ export const github_items = [
     },
 ];
 
+// the content of the website footer
 export const footer_items = [
     {
         "title": "About Us",
@@ -27,5 +28,39 @@ export const footer_items = [
     {
         "title": "Contact Us",
         "url": "/home",
+    },
+];
+
+export const datasets_tabs = [
+    "all",
+    "first",
+    "second",
+    "third",
+    "fourth",
+    "fifth",
+];
+
+export const datasets_table_head = [
+    "name",
+    "description",
+    "type",
+    "size",
+    "empty",
+];
+
+export const datasets_table_data = [
+    {
+        "name": "Test Dataset",
+        "description": "This is a test dataset",
+        "type": "csv",
+        "size": "1.2MB",
+        "empty": "",
+    },
+    {
+        "name": "Test Dataset",
+        "description": "This is a test dataset",
+        "type": "csv",
+        "size": "1.2MB",
+        "empty": "",
     },
 ];

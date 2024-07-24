@@ -2,14 +2,41 @@
     "navbar": {
         "title": "PyOE",
         "home": "Home",
+        "datasets": "Datasets",
         "paper": "Paper",
         "github": "Github"
+    },
+    "pagination": {
+        "prev": "Previous",
+        "next": "Next",
+        "not_found": "No data found"
     },
     "home": {
         "get_started": "Get Started",
         "learn_more": "Learn More",
         "title": "Welcome to PyOE!",
         "description": "Investigating Open Environment Challenges in Real-World Relational Data Streams"
+    },
+    "datasets": {
+        "title": "Datasets",
+        "description": "The datasets used in the paper are available for download here.",
+        "download": "Download",
+        "check": "Check",
+        "tabs": {
+            "all": "All",
+            "first": "First",
+            "second": "Second",
+            "third": "Third",
+            "fourth": "Fourth",
+            "fifth": "Fifth"
+        },
+        "heads": {
+            "name": "Name",
+            "description": "Description",
+            "type": "Type",
+            "size": "Size",
+            "empty": ""
+        }
     },
     "alert": {
         "default": "Operation Failed"

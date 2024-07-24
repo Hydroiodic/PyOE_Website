@@ -2,6 +2,7 @@
     "navbar": {
         "title": "PyOE",
         "home": "主页",
+        "datasets": "数据集",
         "paper": "论文",
         "github": "Github"
     },
