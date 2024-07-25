@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import {
     Typography, Card, CardHeader, Input, Button, CardBody, CardFooter, Tabs, TabsHeader, Tab
 } from "@material-tailwind/react";
-import { datasets_tabs, datasets_table_head, datasets_table_data } from "../components/common/constants";
+import { datasets_tabs, datasets_table_head } from "../components/common/constants";
+import { datasets } from "../data/datasets"
 import Pagination from "../utils/Pagination";
+import { Link } from "react-router-dom";
 
 function Datasets() {
     // use i18n to translate
@@ -13,13 +15,35 @@ function Datasets() {
 
     // the index of the page
     const [page, set_page] = useState(0);
-    const [items, set_items] = useState(datasets_table_data);
+    const [items, set_items] = useState([]);
+    const [page_items, set_page_items] = useState([]);
+
+    // the category of the dataset
+    const [category, set_category] = useState(datasets_tabs[0]);
+
+    useEffect(() => {
+        // if the category is none, show all the datasets
+        if (category === "none") {
+            set_items(datasets.sort((a, b) => a.name > b.name));
+            return;
+        }
+        // filter the dataset by category
+        const filtered = datasets.filter((data) => data.category === category)
+            .sort((a, b) => a.name > b.name);
+        set_items(filtered);
+    }, [category]);
+
+    useEffect(() => {
+        const start = page * 5;
+        const end = Math.min(start + 5, items.length);
+        set_page_items(items.slice(start, end));
+    }, [items, page]);
 
     // use datasets_tabs to create a filter
     const filter = datasets_tabs.map((tab) =>
-        <Tab key={tab} value={tab}>
-            <Typography color="blue-gray" className="font-normal leading-none opacity-70 text-center py-2">
-                &nbsp;&nbsp;{t(`datasets.tabs.${tab}`)}&nbsp;&nbsp;
+        <Tab key={tab} value={tab} onClick={() => { if (tab !== category) { set_page(0); set_category(tab); } }}>
+            <Typography color="blue-gray" className="font-normal leading-none opacity-70 text-center p-2 text-wrap">
+                {t(`datasets.category.${tab}`)}
             </Typography>
         </Tab>
     );
@@ -33,9 +57,9 @@ function Datasets() {
         </th>
     );
 
-    const body = items.map((data, index) => {
+    const body = page_items.map((data, index) => {
         // there will be a horizontal line under the last row
-        const is_last = index === datasets_table_data.length - 1;
+        const is_last = index === datasets.length - 1;
         const classes = is_last ? "p-4" : "p-4 border-b border-blue-gray-50";
 
         // use datasets_table_data to create a table row
@@ -43,14 +67,16 @@ function Datasets() {
             // the last column is a button
             return head === "empty" ? (
                 <td className={classes}>
-                    <Button variant="text" size="sm">
-                        {t("datasets.check")}
-                    </Button>
+                    <Link to={`/detail/${data.name}`}>
+                        <Button variant="text" size="sm">
+                            {t("datasets.check")}
+                        </Button>
+                    </Link>
                 </td>
             ) : (
                 <td className={classes}>
                     <Typography variant="small" color="blue-gray" className="font-normal">
-                        {data[head]}
+                        {head === "category" ? t(`datasets.category.${data[head]}`) : data[head]}
                     </Typography>
                 </td>
             );
@@ -77,18 +103,18 @@ function Datasets() {
                             </Typography>
                         </div>
                         <div className="w-full md:w-72">
-                            <Input label="Search" icon={<MagnifyingGlassIcon className="h-5 w-5" />} />
+                            <Input label={t("datasets.search")} icon={<MagnifyingGlassIcon className="h-5 w-5" />} />
                         </div>
                     </div>
                 </CardHeader>
                 <CardBody className="overflow-scroll px-0">
                     <div className="flex items-center justify-between gap-8">
-                        <Tabs value="all" orientation="vertical" className="px-4 lg-max:hidden">
+                        <Tabs value={category} orientation="vertical" className="px-4 lg-max:hidden self-start">
                             <TabsHeader>
                                 {filter}
                             </TabsHeader>
                         </Tabs>
-                        <table className="mt-4 w-full min-w-max table-auto text-left self-start">
+                        <table className="mt-4 w-full table-auto text-left self-start">
                             <thead>
                                 <tr>
                                     {heads}

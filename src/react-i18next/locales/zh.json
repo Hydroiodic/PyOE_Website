@@ -6,11 +6,50 @@
         "paper": "论文",
         "github": "Github"
     },
+    "pagination": {
+        "prev": "上一页",
+        "next": "下一页",
+        "not_found": "未找到数据"
+    },
     "home": {
         "get_started": "开始使用",
         "learn_more": "了解更多",
         "title": "欢迎来到 PyOE!",
         "description": "让我们在真实世界的关系数据流中研究开放环境挑战"
+    },
+    "datasets": {
+        "title": "数据集",
+        "description": "本文中使用的数据集可在此处下载。",
+        "search": "搜索",
+        "download": "下载",
+        "check": "查看",
+        "heads": {
+            "name": "名称",
+            "category": "类别",
+            "description": "描述",
+            "instances": "实例",
+            "features": "特征",
+            "empty": ""
+        },
+        "category": {
+            "none": "无",
+            "ecology": "生态",
+            "power": "能耗",
+            "commerce": "商业",
+            "st": "科技",
+            "social": "社会",
+            "others": "其他"
+        }
+    },
+    "detail": {
+        "heads": {
+            "category": "类别",
+            "instances": "实例",
+            "features": "特征",
+            "anomaly": "异常值比率",
+            "drift": "漂移值比率",
+            "missing": "缺失值比率"
+        }
     },
     "alert": {
         "default": "操作失败"

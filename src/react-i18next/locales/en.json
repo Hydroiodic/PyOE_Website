@@ -20,22 +20,35 @@
     "datasets": {
         "title": "Datasets",
         "description": "The datasets used in the paper are available for download here.",
+        "search": "Search",
         "download": "Download",
         "check": "Check",
-        "tabs": {
-            "all": "All",
-            "first": "First",
-            "second": "Second",
-            "third": "Third",
-            "fourth": "Fourth",
-            "fifth": "Fifth"
-        },
         "heads": {
             "name": "Name",
+            "category": "Category",
             "description": "Description",
-            "type": "Type",
-            "size": "Size",
+            "instances": "Instances",
+            "features": "Features",
             "empty": ""
+        },
+        "category": {
+            "none": "None",
+            "ecology": "Ecology",
+            "power": "Power Consumption",
+            "commerce": "Commerce",
+            "st": "Science and Technology",
+            "social": "Social",
+            "others": "Others"
+        }
+    },
+    "detail": {
+        "heads": {
+            "category": "Category",
+            "instances": "Instances",
+            "features": "Features",
+            "anomaly": "Anomaly",
+            "drift": "Drift",
+            "missing": "Missing"
         }
     },
     "alert": {

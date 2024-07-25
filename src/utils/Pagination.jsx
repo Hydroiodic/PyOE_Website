@@ -25,6 +25,7 @@ function Pagination({ total, page, set_page }) {
             set_page(index);
         },
         key: index,
+        className: page !== index ? "lg-max:hidden" : "",
     });
 
     const next = () => {

@@ -17,6 +17,12 @@ export const github_items = [
         icon: CommandLineIcon,
         url: "https://github.com/sjtudyq/PyOE",
     },
+    {
+        title: "OEBench",
+        description: "Exploring the mystery of open environment challenges.",
+        icon: CommandLineIcon,
+        url: "https://github.com/Xtra-Computing/OEBench",
+    },
 ];
 
 // the content of the website footer
@@ -32,35 +38,30 @@ export const footer_items = [
 ];
 
 export const datasets_tabs = [
-    "all",
-    "first",
-    "second",
-    "third",
-    "fourth",
-    "fifth",
+    "none",
+    "ecology",
+    "power",
+    "commerce",
+    "st",
+    "social",
+    "others",
 ];
 
 export const datasets_table_head = [
     "name",
+    "category",
     "description",
-    "type",
-    "size",
+    "instances",
+    "features",
     "empty",
 ];
 
-export const datasets_table_data = [
-    {
-        "name": "Test Dataset",
-        "description": "This is a test dataset",
-        "type": "csv",
-        "size": "1.2MB",
-        "empty": "",
-    },
-    {
-        "name": "Test Dataset",
-        "description": "This is a test dataset",
-        "type": "csv",
-        "size": "1.2MB",
-        "empty": "",
-    },
+export const dataset_detail_head = [
+    "category",
+    "instances",
+    "features",
+    "anomaly",
+    "drift",
+    "missing",
 ];
+

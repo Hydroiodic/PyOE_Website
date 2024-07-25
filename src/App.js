@@ -1,8 +1,9 @@
 import Home from "./view/Home";
 import Layout from "./view/Layout";
+import Datasets from "./view/Datasets";
+import Detail from "./view/Detail";
 import ReturnHome from "./utils/ReturnHome";
 import { createBrowserRouter } from "react-router-dom";
-import Datasets from "./view/Datasets";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
             {
                 path: "/datasets",
                 element: <Datasets />,
+            },
+            {
+                path: "/detail/:dataset_name",
+                element: <Detail />,
             },
         ],
     },
