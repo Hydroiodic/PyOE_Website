@@ -3,6 +3,8 @@ import { useTranslation } from "react-i18next";
 import Post from "../components/home/Post";
 
 import tutorialMarkdown from "../markdown/tutorial.md";
+import DetailsMarkdown from "../markdown/details.md";
+import ExamplesMarkdown from "../markdown/examples.md";
 
 function Home() {
     const { t } = useTranslation();
@@ -30,6 +32,8 @@ function Home() {
 
             {/* Below contain lots of posts that we need to show */}
             <Post content={tutorialMarkdown} />
+            <Post content={DetailsMarkdown} />
+            <Post content={ExamplesMarkdown} />
         </div>
     );
 }
