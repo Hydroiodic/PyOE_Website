@@ -5,6 +5,7 @@ import Post from "../components/home/Post";
 import tutorialMarkdown from "../markdown/tutorial.md";
 import DetailsMarkdown from "../markdown/details.md";
 import ExamplesMarkdown from "../markdown/examples.md";
+import NoteMarkdown from "../markdown/note.md";
 
 function Home() {
     const { t } = useTranslation();
@@ -34,6 +35,7 @@ function Home() {
             <Post content={tutorialMarkdown} />
             <Post content={DetailsMarkdown} />
             <Post content={ExamplesMarkdown} />
+            <Post content={NoteMarkdown} />
         </div>
     );
 }
