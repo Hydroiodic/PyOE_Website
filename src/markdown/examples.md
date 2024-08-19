@@ -1,10 +1,10 @@
-# Examples for the 4 Supported Tasks
+# Examples for the 5 Supported Tasks
 
-Our PyOE system currently supports 4 types of tasks: regression analysis, classification, outlier detection, and concept drift detection. In the following, we will provide examples of code for each of these 4 tasks.
+Our PyOE system currently supports 5 types of tasks: regression analysis, classification, outlier detection, and concept drift detection. In the following, we will provide examples of code for each of these 4 tasks.
 
 ## Regression
 
-To perform *Open Environment* regression analysis using PyOE, follow the steps mentioned earlier: first, load the dataset, then select a model that supports this task, choose a method for handling missing values, and finally, pass all these as parameters to the trainer. By calling the `train` method, the model will be trained automatically.
+To perform *Open Environment* regression analysis using PyOE, follow the steps mentioned earlier: first, load the dataset, then select a model that supports this task, choose a method for handling missing values, and finally, pass all these as parameters to the trainer. By calling the ```train``` method, the model will be trained automatically.
 
 After that, if you want to make regression predictions, you can get the model using ```model.get_net()```, and then pass the corresponding data to make predictions.
 
@@ -42,6 +42,27 @@ trainer = PyOE.NaiveTrainer(dataloader=dataloader, model=model, preprocessor=pre
 # get the trained net
 net = model.get_net()
 # predict here...
+```
+
+## Clustering
+
+Our system supports clustering analysis of data points. The task is done by training a clustering stream model on the data points and then using the model to make predictions after training is complete. The model will return integer label values representing which cluster the current data point belongs to. Below is a sample code:
+
+```python
+import PyOE
+from torch.utils.data import DataLoader as TorchDataLoader
+
+# prepare dataloader, model, preprocessor and trainer, and then train the model
+dataloader = PyOE.Dataloader(dataset_name="OD_datasets/AT")
+model = PyOE.CluStreamModel(dataloader=dataloader)
+preprocessor = PyOE.Preprocessor(missing_fill="knn2")
+trainer = PyOE.ClusterTrainer(dataloader=dataloader, model=model, preprocessor=preprocessor, epochs=16)
+trainer.train()
+
+# predict which cluster these data points belong to
+torch_dataloader = TorchDataLoader(dataloader, batch_size=32, shuffle=True)
+for X, y, _ in torch_dataloader:
+    print(X, model.predict_cluster(X))
 ```
 
 ## Outlier Detection
