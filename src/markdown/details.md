@@ -28,3 +28,13 @@ As is stated in the paper [OEBench](https://arxiv.org/pdf/2308.15059v3), the dat
 
 For this part, we have provided two algorithms for training the model (```NaiveTrainer``` and ```IcarlTrainer```). For common usage, you can pass the parameters to it directly and then call ```train``` method. Then the model will use the selected data to train the model.
 
+## Metrics
+
+In this part of our system, we provide several metrics to evaluate the performance of a dataset or a model after training. This mainly includes three parts:
+
+**Effectiveness** - Outputs the average loss of fitting all current data.
+
+**Efficiency** - Automatically measures the time at the start and end of training and calculates the total training duration. You can retrieve the total duration of the last training by calling ```trainer.get_last_training_time()``` (unit is seconds).
+
+**Drift Detection Delay** - Measures the average delay in detecting concept drift given the ground truth. If no ground truth is provided, it outputs all the predicted locations of concept drift.
+
