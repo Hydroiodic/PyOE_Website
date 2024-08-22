@@ -15,7 +15,7 @@ export const github_items = [
         title: "PyOE",
         description: "An easy-use benchmark system.",
         icon: CommandLineIcon,
-        url: "https://github.com/sjtudyq/PyOE",
+        url: "https://github.com/Xtra-Computing/PyOE",
     },
     {
         title: "OEBench",
@@ -29,11 +29,11 @@ export const github_items = [
 export const footer_items = [
     {
         "title": "About Us",
-        "url": "/home",
+        "url": "https://github.com/Xtra-Computing",
     },
     {
         "title": "Contact Us",
-        "url": "/home",
+        "url": "https://github.com/Xtra-Computing",
     },
 ];
 

@@ -32,10 +32,12 @@ function Home() {
             <div className="h-8 lg-max:h-4" />
 
             {/* Below contain lots of posts that we need to show */}
-            <Post content={tutorialMarkdown} />
-            <Post content={DetailsMarkdown} />
-            <Post content={ExamplesMarkdown} />
-            <Post content={NoteMarkdown} />
+            <div className="flex flex-col w-full gap-16 lg-max:gap-8 items-center">
+                <Post content={tutorialMarkdown} />
+                <Post content={DetailsMarkdown} />
+                <Post content={ExamplesMarkdown} />
+                <Post content={NoteMarkdown} />
+            </div>
         </div>
     );
 }
