@@ -17,7 +17,7 @@ among which the first 5 models are used for *Regression and Classification*, the
 To initialize a model, you should pass the ```dataloader``` and ```device``` as parameters to the model (Attention: some ```sklearn```-based model doesn't support the device ```cuda```). For example, if a mlp-model is needed, we could use:
 
 ```python
-model = PyOE.MlpModel(dataloader=dataloader, device="cuda")
+model = pyoe.MlpModel(dataloader=dataloader, device="cuda")
 ```
 
 ## Preprocessor

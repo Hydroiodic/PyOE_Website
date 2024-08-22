@@ -22,7 +22,7 @@ Our system preliminary supports distributed cluster training. Here is an example
 
 ```python
 import os
-import PyOE
+import pyoe
 
 def set_env_vars():
     # Set environment variables for distributed training
@@ -34,20 +34,20 @@ def set_env_vars():
 # be put in the `if __name__ == "__main__":` block
 if __name__ == "__main__":
     # using pre-prepared dataset and load them into a dataloader
-    dataloader = PyOE.Dataloader(dataset_name="dataset_experiment_info/beijingPM2.5")
+    dataloader = pyoe.Dataloader(dataset_name="dataset_experiment_info/beijingPM2.5")
 
     # initialize the model, trainer and preprocessor
-    model = PyOE.MlpModel(dataloader=dataloader, device="cuda")
-    preprocessor = PyOE.Preprocessor(missing_fill="knn2")
-    trainer = PyOE.NaiveTrainer(dataloader=dataloader, model=model, preprocessor=preprocessor, epochs=16)
+    model = pyoe.MlpModel(dataloader=dataloader, device="cuda")
+    preprocessor = pyoe.Preprocessor(missing_fill="knn2")
+    trainer = pyoe.NaiveTrainer(dataloader=dataloader, model=model, preprocessor=preprocessor, epochs=16)
 
     # train the model using multiple processes
     world_size = 4
     set_env_vars()
-    PyOE.MultiProcessTrainer(world_size, dataloader, trainer, preprocessor).train()
+    pyoe.MultiProcessTrainer(world_size, dataloader, trainer, preprocessor).train()
 
     # using an effective metric to evaluate the model
-    print(f"Average MSELoss: {PyOE.metrics.EffectivenessMetric(dataloader, model).measure()}")
+    print(f"Average MSELoss: {pyoe.metrics.EffectivenessMetric(dataloader, model).measure()}")
 ```
 
 The above code will start ```world_size``` number of processes, which accumulate gradients through inter-process communication to train the model jointly. This approach can make better use of computational resources and improve training efficiency.
