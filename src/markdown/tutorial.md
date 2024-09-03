@@ -8,6 +8,15 @@ This post is meant to assist you to use PyOE with ease.
 
 The steps to use PyOE system are mainly deivided into three, as was stated in the OEBench paper. Firstly, you could use DataLoader to load our pre-prepared data or you own data from the internet. After that, you should choose what algorithm and metrics are to be used. Then, our library will begin to pre-process the loaded data. Finally, the model will be trained well for your later researching.
 
+## Steps to Install PyOE in Your Environment
+
+You can install pyoe into your environment simply by running the following commands:
+
+```shell
+pip install --no-deps river==0.21.2 rtdl==0.0.13 streamad==0.3.1
+pip install pyoe
+```
+
 ## A Simple Example of Using Our System
 
 Below is a simple example of the usage.

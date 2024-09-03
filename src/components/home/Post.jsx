@@ -1,10 +1,14 @@
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { useNavigate } from "react-router";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { solarizedlight } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Typography } from "@material-tailwind/react";
 
-function Post({ content }) {
+function Post({ content, title }) {
+    // define the navigator
+    const navigate = useNavigate();
+
     // define custom components for markdown rendering
     const markdown_components = {
         code(props) {
@@ -25,7 +29,8 @@ function Post({ content }) {
             );
         },
         h1: ({ children }) =>
-            <Typography variant="h2" className="font-bold py-4 text-4xl lg-max:text-3xl lg-max:py-2 text-default-black">
+            <Typography variant="h2" onClick={() => navigate(`#${title}`)}
+                className="font-bold py-4 text-4xl lg-max:text-3xl lg-max:py-2 text-default-black hover:cursor-pointer">
                 {children}
             </Typography>,
         h2: ({ children }) =>
@@ -45,6 +50,7 @@ function Post({ content }) {
     return (
         <div className="w-[70vw] lg-max:w-[90vw] p-12 lg-max:p-4 bg-gray-200 rounded-2xl text-left 
             transition-all duration-100 delay-75">
+            <div id={title}></div>
             <Markdown remarkPlugins={[remarkGfm]} rehypePlugins={[]} components={markdown_components}>
                 {content}
             </Markdown>
