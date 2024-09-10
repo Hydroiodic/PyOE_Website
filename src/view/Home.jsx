@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate, useLocation } from "react-router-dom";
 import Post from "../components/home/Post";
 
-import tutorialMarkdown from "../markdown/tutorial.md";
+import TutorialMarkdown from "../markdown/tutorial.md";
 import DetailsMarkdown from "../markdown/details.md";
 import ExamplesMarkdown from "../markdown/examples.md";
 import NoteMarkdown from "../markdown/note.md";
@@ -48,7 +48,7 @@ function Home() {
 
             {/* Below contain lots of posts that we need to show */}
             <div className="flex flex-col w-full gap-16 lg-max:gap-8 items-center">
-                <Post content={tutorialMarkdown} title="tutorial" />
+                <Post content={TutorialMarkdown} title="tutorial" />
                 <Post content={DetailsMarkdown} title="details" />
                 <Post content={ExamplesMarkdown} title="examples" />
                 <Post content={NoteMarkdown} title="note" />

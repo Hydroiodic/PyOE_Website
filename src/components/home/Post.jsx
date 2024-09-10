@@ -23,9 +23,10 @@ function Post({ content, title }) {
                     style={solarizedlight}
                 />
             ) : (
-                <code {...rest} className={className}>
+                <code {...rest}
+                    className={`${className} bg-gray-300/75 font-normal px-2 py-1 rounded-lg text-lg lg-max:text-[10pt]`}>
                     {children}
-                </code>
+                </code >
             );
         },
         h1: ({ children }) =>
@@ -42,9 +43,19 @@ function Post({ content, title }) {
                 {children}
             </Typography>,
         p: ({ children }) =>
-            <Typography variant="paragraph" className="py-2 text-xl font-normal lg-max:text-[12pt] lg-max:py-1 text-gray-600">
+            <Typography variant="paragraph" className="py-2 text-xl font-normal lg-max:text-[12pt] lg-max:py-1 text-gray-700">
                 {children}
             </Typography>,
+        ul: ({ children }) =>
+            <ul className="list-disc border-gray-700 pl-5 py-2 text-xl font-normal text-gray-600 lg-max:text-[12pt] lg-max:py-1">
+                {children}
+            </ul>,
+        ol: ({ children }) =>
+            <ol className="list-decimal pl-5 py-2 text-xl text-gray-600 lg-max:text-[12pt] lg-max:py-1">
+                {children}
+            </ol>,
+        a: ({ children, href }) =>
+            <a href={href} className="text-blue-500 hover:underline">{children}</a>,
     }
 
     return (

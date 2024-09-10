@@ -130,7 +130,7 @@ export const datasets = [
         "missing": 0.000,
     },
     {
-        "name": "Porto Seguro’s Safe Driver",
+        "name": "Porto Seguro's Safe Driver",
         "category": "commerce",
         "description": "This dataset contains information about automobile insurance claims. The task is to predict whether the driver will file an insurance claim in the next year.",
         "instances": 595212,

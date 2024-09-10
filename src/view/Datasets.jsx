@@ -1,17 +1,30 @@
 import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import {
     Typography, Card, CardHeader, Input, Button, CardBody, CardFooter, Tabs, TabsHeader, Tab
 } from "@material-tailwind/react";
+
 import { datasets_tabs, datasets_table_head } from "../components/common/constants";
 import { datasets } from "../data/datasets"
 import Pagination from "../utils/Pagination";
-import { Link } from "react-router-dom";
+import Post from "../components/home/Post";
+import FinancialMarkdown from "../markdown/financial.md";
 
 function Datasets() {
     // use i18n to translate
     const { t } = useTranslation();
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash) {
+            const element = document.getElementById(location.hash.substring(1));
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }, [location]);
 
     // the index of the page
     const [page, set_page] = useState(0);
@@ -130,6 +143,11 @@ function Datasets() {
                     <Pagination total={Math.ceil(items.length / 5)} page={page} set_page={set_page} />
                 </CardFooter>
             </Card>
+
+            {/* Spacing */}
+            <div className="h-8 lg-max:h-4" />
+
+            <Post content={FinancialMarkdown} title="financial" />
         </div>
     );
 }
