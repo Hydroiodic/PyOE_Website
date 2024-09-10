@@ -10,7 +10,9 @@ import { datasets_tabs, datasets_table_head } from "../components/common/constan
 import { datasets } from "../data/datasets"
 import Pagination from "../utils/Pagination";
 import Post from "../components/home/Post";
+
 import FinancialMarkdown from "../markdown/financial.md";
+import LicencesMarkdown from "../markdown/licences.md";
 
 function Datasets() {
     // use i18n to translate
@@ -147,7 +149,11 @@ function Datasets() {
             {/* Spacing */}
             <div className="h-8 lg-max:h-4" />
 
-            <Post content={FinancialMarkdown} title="financial" />
+            {/* Below contain lots of posts that we need to show */}
+            <div className="flex flex-col w-full gap-16 lg-max:gap-8 items-center">
+                <Post content={FinancialMarkdown} title="financial" />
+                <Post content={LicencesMarkdown} title="licences" />
+            </div>
         </div>
     );
 }

@@ -43,7 +43,7 @@ function Post({ content, title }) {
                 {children}
             </Typography>,
         p: ({ children }) =>
-            <Typography variant="paragraph" className="py-2 text-xl font-normal lg-max:text-[12pt] lg-max:py-1 text-gray-700">
+            <Typography variant="paragraph" className="py-2 text-xl font-normal lg-max:text-[12pt] lg-max:py-1 text-gray-600">
                 {children}
             </Typography>,
         ul: ({ children }) =>
